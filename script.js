@@ -16,3 +16,6 @@ function getComputerChoice(){
 function getHumanChoice(){
     return prompt("what's your choice?");
 }
+
+let humanScore = 0;
+let computerScore = 0;
