@@ -17,8 +17,7 @@ function getHumanChoice(){
     return prompt("what's your choice?");
 }
 
-let humanScore = 0;
-let computerScore = 0;
+
 
 function playRound(humanChoice, computerChoice) {
     if(computerChoice.toLowerCase()){
@@ -56,8 +55,13 @@ function playRound(humanChoice, computerChoice) {
         }
     }        
 }
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+}
+    
