@@ -19,9 +19,12 @@ function getHumanChoice(){
 
 
 
-function playRound(humanChoice, computerChoice) {
-    if(computerChoice.toLowerCase()){
+
+function playGame(){
+    function playRound(humanChoice, computerChoice) {
+    if(computerChoice.toLowerCase()===humanChoice.toLowerCase()){
         console.log("draw");
+        console.log("Your Score: "+humanScore+"  Computer Score: "+computerScore);
         return;
     }
     if(humanChoice.toLowerCase()==="rock"){
@@ -29,9 +32,13 @@ function playRound(humanChoice, computerChoice) {
             case "paper":
                 console.log("You lose! Paper beats Rock");
                 computerScore++;
+                console.log("Your Score: "+humanScore+"  Computer Score: "+computerScore);
+                return;
             case "scissors":
                 console.log("You win! Rock beats Scissors");
-                humanScore++;    
+                humanScore++;
+                console.log("Your Score: "+humanScore+"  Computer Score: "+computerScore);
+                return;    
         }
     }
     if(humanChoice.toLowerCase()==="scissors"){
@@ -39,9 +46,13 @@ function playRound(humanChoice, computerChoice) {
             case "paper":
                 console.log("You win! Scissors beats Paper");
                 computerScore++;
+                console.log("Your Score: "+humanScore+"  Computer Score: "+computerScore);
+                return; 
             case "rock":
                 console.log("You lose! Rock beats Scissors");
-                humanScore++;    
+                humanScore++; 
+                console.log("Your Score: "+humanScore+"  Computer Score: "+computerScore);   
+                return; 
         }
     }  
     if(humanChoice.toLowerCase()==="paper"){
@@ -49,13 +60,16 @@ function playRound(humanChoice, computerChoice) {
             case "rock":
                 console.log("You win! Paper beats Rock");
                 computerScore++;
+                console.log("Your Score: "+humanScore+"  Computer Score: "+computerScore);
+                return; 
             case "scissors":
                 console.log("You lose! Scissors beats Paper");
-                humanScore++;    
+                humanScore++;  
+                console.log("Your Score: "+humanScore+"  Computer Score: "+computerScore);  
+                return; 
         }
     }        
 }
-function playGame(){
     let humanScore = 0;
     let computerScore = 0;
     playRound(getHumanChoice(), getComputerChoice());
@@ -64,4 +78,5 @@ function playGame(){
     playRound(getHumanChoice(), getComputerChoice());
     playRound(getHumanChoice(), getComputerChoice());
 }
-    
+   
+playGame();
