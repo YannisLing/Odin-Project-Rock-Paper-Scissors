@@ -12,3 +12,7 @@ function getComputerChoice(){
             break;
     }
 }
+
+function getHumanChoice(){
+    return prompt("what's your choice?");
+}
